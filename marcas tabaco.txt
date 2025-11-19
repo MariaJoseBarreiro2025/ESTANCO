@@ -30,3 +30,17 @@ Marcas de Tabaco y sus Productos
 7. L&M
    - L&M Red
    - L&M Blue
+
+8. Pall Mall
+   - Pall Mall Red
+   - Pall Mall Blue
+   - Pall Mall Silver
+
+9. Newport
+   - Newport Menthol
+   - Newport Non-Menthol
+
+10. Kent
+    - Kent Blue
+    - Kent Silver
+    - Kent Box
