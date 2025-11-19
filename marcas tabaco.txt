@@ -1,0 +1,32 @@
+Marcas de Tabaco y sus Productos
+
+1. Marlboro
+   - Marlboro Red
+   - Marlboro Gold
+   - Marlboro Silver
+
+2. Camel
+   - Camel Blue
+   - Camel Filter
+   - Camel Crush
+
+3. Lucky Strike
+   - Lucky Strike Red
+   - Lucky Strike Silver
+
+4. Winston
+   - Winston Red
+   - Winston Blue
+   - Winston Classic
+
+5. Chesterfield
+   - Chesterfield Red
+   - Chesterfield Blue
+
+6. Philip Morris
+   - Philip Morris Red
+   - Philip Morris Blue
+
+7. L&M
+   - L&M Red
+   - L&M Blue
