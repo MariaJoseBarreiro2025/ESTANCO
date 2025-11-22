@@ -1,0 +1,14 @@
+Diarios:
+	El Pais
+	El Mundo
+	La Voz de Galicia
+
+Prensa rosa:	
+	Hola
+	Lecturas
+	Semana
+
+Cientificos:
+	Muy interesante
+	National Geographic
+	Investigación y Ciencia
