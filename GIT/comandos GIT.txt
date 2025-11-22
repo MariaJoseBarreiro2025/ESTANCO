@@ -1,0 +1,393 @@
+NAVEGACIÓN Y CREACIÓN DE CARPETAS
+
+# Navegar a la carpeta Users
+cd /c/Users
+
+# Subir un nivel (a la raíz C:)
+cd ..
+
+# Ver directorio actual
+pwd
+
+# Crear carpeta ESTANCOGIT
+mkdir ESTANCOGIT
+
+# Entrar en la carpeta
+cd ESTANCOGIT
+
+
+
+INICIALIZACIÓN DE GIT
+
+# Ver directorio actual
+pwd
+
+# Inicializar repositorio Git
+git init
+
+# Listar archivos (vacío)
+ls
+
+# Listar archivos ocultos
+ls -a
+
+# Listar con detalles
+ls -la
+
+
+EXPLORAR CARPETA .git
+
+# Entrar en carpeta .git
+cd .git
+
+# Listar contenido de .git
+ls
+
+
+
+CONFIGURACIÓN DE GIT
+
+# Configurar nombre de usuario
+git config user.name "Marialose Barreiro"
+
+# Configurar email
+git config user.email "pruebas.fp@hotmail.com"
+
+# Ver toda la configuración
+git config --list
+
+# Ver solo nombre de usuario
+git config user.name
+
+# Ver solo email
+git config user.email
+
+# Ver estado del repositorio
+git status
+
+
+CONFIGURACIÓN DEL EDITOR
+
+# Configurar VS Code como editor global
+git config --global core.editor "code --wait"
+
+# Verificar configuración del editor
+git config --global core.editor
+
+
+
+CONFIGURACIÓN LOCAL
+
+# Ver configuración local del repositorio
+git config --local --list
+
+
+
+
+ABRIR EDITORES Y EXPLORADOR
+
+# Abrir VS Code (diferentes métodos)
+start code          # Abre cmd y code
+start code .        # Abre code en la carpeta actual  
+start .             # Abre explorador de Windows en la carpeta
+code .              # MEJOR OPCIÓN - Abre VS Code en la carpeta actual
+
+
+PRIMER COMMIT - ARCHIVO INICIAL
+
+# Ver estado inicial
+git status
+
+# Añadir archivo al staging
+git add "marcas tabaco.txt"
+
+# Ver cambios preparados
+git status
+
+# Primer commit
+git commit -m "Añadir archivo marcas tabaco.txt con listado de productos"
+
+# Ver estado limpio
+git status
+
+# Ver historial
+git log
+
+# Ver archivos en repositorio
+git ls-files
+
+
+
+SEGUNDO COMMIT - ACTUALIZACIÓN
+
+# Abrir VS Code en la carpeta
+code .
+
+# Ver cambios modificados
+git status
+
+# Añadir cambios al staging
+git add "marcas tabaco.txt"
+
+# Commit de actualización
+git commit -m "Actualizar archivo marcas tabaco"
+
+# Ver historial completo
+git log
+
+
+TRABAJAR CON RAMAS
+
+# Ver ramas existentes
+git branch
+
+# Crear nueva rama
+git branch nuevas-marcas-tabaco
+
+# Cambiar a la nueva rama
+git checkout nuevas-marcas-tabaco
+
+# Ver ramas (con rama actual marcada)
+git branch
+
+# Forma moderna de crear y cambiar rama (nota)
+git switch -c nuevas-marcas-tabaco
+
+
+COMMIT EN NUEVA RAMA
+
+# Ver estado en nueva rama
+git status
+
+# Añadir cambios
+git add "marcas tabaco.txt"
+
+# Commit en la rama nueva
+git commit -m "añadir nuevas marcas de tabaco + japonesas"
+
+
+
+VER HISTORIAL RESUMIDO
+
+# Ver log en una línea
+git log --oneline
+
+
+
+FUSIÓN DE RAMAS (MERGE)
+
+# Ver ramas disponibles
+git branch
+
+# Cambiar a la rama main
+git checkout main
+
+# Fusionar la rama nuevas-marcas-tabaco con main
+git merge nuevas-marcas-tabaco
+
+
+
+VERIFICACIÓN DE CAMBIOS
+
+# Ver las últimas líneas del archivo
+tail -n 7 "marcas tabaco.txt"
+
+
+
+HISTORIAL DE REFERENCIAS
+# Ver historial completo de movimientos
+git reflog
+
+
+GESTIÓN DE .gitignore
+
+# Ver estado - detecta .gitignore nuevo
+git status
+
+# Añadir .gitignore al staging
+git add .gitignore
+
+# Ver cambios preparados
+git status
+
+# Commit del .gitignore
+git commit -m "añado .gitignore para ignorar archivos temporales"
+
+# Ver estado limpio
+git status
+
+# Verificar que .gitignore funciona
+git check-ignore -v notas_personales.tmp
+
+
+
+NUEVOS COMMITS EN MAIN
+
+# Añadir cambios de marcas tabaco
+git add "marcas tabaco.txt"
+
+# Ver cambios preparados
+git status
+
+# Commit de nuevas marcas premium
+git commit -m "añadir marcas premium"
+
+
+
+RESET
+
+# Reset duro al commit específico 60c9efb
+git reset --hard 60c9efb
+
+# Verificar el estado después del reset
+tail -n 7 "marcas tabaco.txt"
+
+
+
+AÑADIR NUEVOS ARCHIVOS
+
+# Ver archivos no rastreados
+git status
+
+# Añadir ambos archivos al staging
+git add "Listado golosinas.txt" "Listado prensa.txt"
+
+# Ver cambios preparados
+git status
+
+# Commit de los nuevos archivos
+git commit -m "añadir listados de golosinas y prensa"
+
+# Ver estado limpio
+git status
+
+# Ver historial reciente
+git log --oneline -3
+
+
+
+ELIMINAR ARCHIVO Y REVERTIR
+
+# Eliminar archivo del repositorio
+git rm "Listado prensa.txt"
+
+# Ver cambios preparados
+git status
+
+# Commit de la eliminación
+git commit -m "eliminar listado de prensa"
+
+# Ver historial completo
+git log --oneline
+
+# Revertir un commit específico
+git revert df6c977 --no-edit
+
+# Verificar que el archivo volvió
+ls -la
+
+
+
+CONFIGURAR REPOSITORIO REMOTO
+
+# Ver repositorios remotos configurados
+git remote -v
+
+# Añadir repositorio remoto de GitHub
+git remote add origin https://github.com/MariaJoseBarreiro2025/ESTANCO.git
+
+# Verificar que se añadió
+git remote -v
+
+# Ver ramas disponibles
+git branch
+
+
+
+
+PRIMER PUSH A GITHUB
+
+# Primer push al repositorio remoto
+git push -u origin main
+
+# Verificar la configuración remota
+git remote -v
+
+# Intentar push nuevamente (ya configurado)
+git push -u origin main
+
+
+
+GIT CLONE - CREAR COPIA DEL REPOSITORIO
+
+# Navegar al escritorio
+cd /c/Users/Mar_Bar/Desktop
+
+# Clonar el repositorio desde GitHub
+git clone https://github.com/MariaJoseBarreiro2025/ESTANCO.git ESTANCO-copia
+
+# Entrar en la carpeta clonada
+cd ESTANCO-copia
+
+# Verificar archivos descargados
+ls -la
+
+
+
+SIMULAR CAMBIOS EN EL PROYECTO ORIGINAL
+
+# Volver al proyecto original
+cd /c/ESTANCOGIT
+
+# Añadir cambio al archivo (usando echo)
+echo "Revista Pronto" >> "Listado prensa.txt"
+
+# Ver cambios no guardados
+git status
+
+# Preparar el cambio
+git add "Listado prensa.txt"
+
+# Hacer commit del cambio
+git commit -m "Añadir revista Pronto"
+
+# Ver estado (rama adelantada al remoto)
+git status
+
+# Subir cambios a GitHub
+git push
+
+
+
+
+GIT PULL - SINCRONIZAR LA COPIA
+
+# Ir a la copia clonada
+cd /c/Users/Mar_Bar/Desktop/ESTANCO-copia
+
+# Descargar y fusionar cambios desde GitHub
+git pull origin main
+
+# Verificar que llegó el cambio
+cat "Listado prensa.txt"
+
+
+
+
+
+
+
+
+-------------
+
+    git add - Preparar archivos nuevos
+
+    git commit - Guardar cambios
+
+    git rm - Eliminar archivos del repositorio
+
+    git revert - Deshacer cambios de forma segura
+
+    git remote add - Conectar con repositorio remoto
+
+    git push -u origin main - Primer subida a GitHub
